@@ -1,0 +1,58 @@
+Short Answer
+1. Programmers use pseudocode to summarize a program's flow to ensure that what is being done is clearly understood by all programmers who may use different languages and the requirements are being met. This allows for identifying top level flow errors early on and can save time down the road.
+2. Pseudocode is not meant for the computer to understand so it will not run/throw an error.
+
+Programing Assignment
+1. Create a function that takes two numbers and prints out the greater number.
+INPUT first number
+INPUT second number
+INIT greaterNum
+IF first number is greater than num2 THEN
+  SET greaterNum to first number
+ELSE
+  SET greaterNum to second number
+ENDIF
+PRINT greaterNum
+
+2. Create a function that prints out the numbers from 1 to 100.
+FOR each number from 1 through 100
+  PRINT number
+ENDFOR
+
+3. Create a function that searches for a specific entry in a phonebook.
+(Assuming the phonebook is an array)
+INPUT a phone book
+INPUT a search entry
+FOR every item in array
+  IF item matches the search entry
+  RETURN the item
+ELSE RETURN false
+ENDFOR
+
+4. Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
+
+function greaterNum(num1, num2) {
+  var greaterNum;
+  if (num1 > num2) {
+    greaterNum = num1;
+  } else {
+  greaterNum =  num2;
+  }
+  console.log(greaterNum);
+}
+
+function oneToHundred() {
+  for (var i = 1; i <= 100; i++) {
+    console.log(i);
+  }
+}
+
+function searchEntry(phoneBook, searchEntry) {
+  for (var i = 0; i < phoneBook.length; i++) {
+    if (phonebook[i] === searchEntry) {
+      return phonebook[i];
+    } else {
+      return false;
+    }
+  }
+}
