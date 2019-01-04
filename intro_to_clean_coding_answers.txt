@@ -1,2 +1,20 @@
-1. Clean code is best practice for writing maintainable and readable code that every programmer should follow to become a better programmer. It sets guidelines for how to write code so that it's clear, concise, and modular, making it more efficient and less error prone. It also makes it easier to work with other people's code. Clean code includes naming conventions that help clearly identify the purposes of code without excessive comments or confusion. It follows the DRY philosophy to ensure that no code is repeated unnecessarily and things aren't nested too deep to make it complicated, giving functions their true value as modular and reusable.
-It's much like writing a good essay; easily understandable, to the point, and purposeful. 
+1. Clean code is best practice for writing maintainable and readable code that every programmer should follow to become a better programmer. It sets guidelines for how to write code so that it's clear, concise, and modular, making it more efficient and less error prone. It also makes it easier to work with other people's code. Clean code includes naming conventions that help clearly identify the purposes of code without excessive comments or confusion. It follows the DRY philosophy to ensure that no code is repeated unnecessarily and things aren't nested too deep to make it complicated, giving functions their true value as modular and reusable. It's much like a well written essay that is easily comprehensible and doesn't overwhelm the reader with too much information in run-on sentences.
+
+3. Changed the function and variable names to be more descriptive
+FUNCTION convertTemperature(temperature, unit)
+  IF unit = "F" THEN
+    SET finalTemperature to (temperature−32) * (5/9)
+    ELSE IF unit = "C" THEN
+    SET finalTemperature to (temperature * 1.8 + 32)
+  ENDIF
+  PRINT finalTemperature
+END FUNCTION
+
+4.
+FUNCTION calculatePercentage(sum, total)
+  IF (total = 0) THEN
+    PRINT "Sorry, cannot divide by 0"
+    ELSE
+      PRINT sum / total * 100
+  END IF
+END FUNCTIOn
