@@ -1,6 +1,7 @@
 1. Clean code is best practice for writing maintainable and readable code that every programmer should follow to become a better programmer. It sets guidelines for how to write code so that it's clear, concise, and modular, making it more efficient and less error prone. It also makes it easier to work with other people's code. Clean code includes naming conventions that help clearly identify the purposes of code without excessive comments or confusion. It follows the DRY philosophy to ensure that no code is repeated unnecessarily and things aren't nested too deep to make it complicated, giving functions their true value as modular and reusable. It's much like a well written essay that is easily comprehensible and doesn't overwhelm the reader with too much information in run-on sentences.
 
-3. Changed the function and variable names to be more descriptive
+Questions 3-5: Explain why or why not code is clean and refactor as needed.
+3. The names are not very descriptive.
 FUNCTION convertTemperature(temperature, unit)
   IF unit = "F" THEN
     SET finalTemperature to (temperature−32) * (5/9)
@@ -10,11 +11,75 @@ FUNCTION convertTemperature(temperature, unit)
   PRINT finalTemperature
 END FUNCTION
 
-4.
+4. Abbreviation is used in naming and the result can be printed without storing the value.
 FUNCTION calculatePercentage(sum, total)
   IF (total = 0) THEN
     PRINT "Sorry, cannot divide by 0"
     ELSE
       PRINT sum / total * 100
   END IF
-END FUNCTIOn
+END FUNCTION
+
+
+5a. The function has too many tasks and code is repeated throughout the block.
+
+FUNCTION subTotal(subTotal, discountRate, tax)
+  RETURN subTotal * discountRate + (subTotal * tax)
+END FUNCTION
+
+FUNCTION checkOutCustomer(paymentType) {
+  CALL subTotal RETURNING subtotal
+  SET subTotal = subTotal
+  PRINT 'your total due is': subTotal
+
+  CALL getPayment RETURNING amount
+  SET amount = amount
+
+  IF paymentType = 'CASH' THEN
+    PRINT "Change due: " + amount - subTotal
+    ELSE IF paymentType = 'CREDIT CARD' THEN
+      PRINT 'Your credit card has been charged: ' + subTotal
+  END IF
+END FUNCTION
+
+5b. Function is deeply nested.
+
+FUNCTION getGuestStatus (guest)
+  IF guest.AccountActive THEN
+    IF NOT(guest.hasOverdueBooks) AND (guest.outstandingFees = 0) THEN
+      RETURN true
+  END IF
+  RETURN False
+END FUNCTION
+
+FUNCTION updateGuestBookList (book, guest)
+  APPEND book to guest.books
+  SET book.status to "Checked out"
+END FUNCTION
+
+FUNCTION checkoutBook (book, guest) {
+IF getGuestStatus(guest) = true THEN
+  CALL updateGuestBookList(book, guest)
+  PRINT "Your books have been issues."
+  ELSE
+     PRINT "Unable to check out book."
+ END IF
+END FUNCTION
+
+5c. The class represents clean code. Each function has a task that can be performed on its own. The names are clear and descriptive of its task.
+
+6. Square Given an array of integers, find out whether the sum of the integers is a perfect square. If it is a perfect square, return the square root, otherwise return the sum.
+PSEUDO CODE
+FUNCTION perfectSquare(array)
+  INIT sum
+  FOR every value in array
+    ADD to sum
+  END FOR
+  COMPUTE square root of sum
+  SET squareRootOfSum = square root of sum
+  IF squareRootOfSum = isIntger()
+    RETURN squareRootOfSum
+    ELSE
+      RETURN sum
+  END IF
+END FUNCTION
