@@ -41,7 +41,6 @@ END FUNCTION
       let prev = current;
       current = current.next;
     }
-
   }
 
 
