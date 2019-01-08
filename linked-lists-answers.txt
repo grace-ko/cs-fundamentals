@@ -1,0 +1,53 @@
+Exercises
+1. Linked lists utilize memory space more efficiently as they can be broken up into pieces. However, it only has access to the head and the tail node so any nodes in between can't be accessed directly.
+2. A real life example of linked list is an elevator. In order to reach the top floor, one must start at the ground level at some point and go through every intermediate floor to reach the top.
+
+Programming Questions
+1. The pseudocode doesn't account for the case in which the list contains more than one node.
+FUNCTION push(element)
+  CREATE node
+  SET node.value TO element
+  SET node.next TO null
+
+  IF the head node does not exist
+    THEN SET head to node
+  ELSE
+    SET current to head
+  END IF
+  SET count to zero
+  WHILE current.next is NOT null
+    current = current.next
+    INCREMENT count
+  END WHILE
+  SET current.next to node
+END FUNCTION
+
+2. Remove duplicates from an unsorted singly linked list
+  LinkedList.prototype.removeDuplicates = function () {
+    if(!this.head || !this.head.next) {
+      return false;
+    }
+    let count = {}
+    let current = this.head;
+
+    while(current !== null) {
+      if (count[current.val]) {
+        let currentNext = current.next;
+        prev.next = currentNext;
+        current.next = null;
+      } else {
+        count[current.val] = 1;
+      }
+      let prev = current;
+      current = current.next;
+    }
+
+  }
+
+
+
+
+
+
+
+3. Reverse an unsorted singly linked list
