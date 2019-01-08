@@ -1,0 +1,42 @@
+Exercises
+1. The main difference between a stack and a queue is that stack has a LIFO priority whereas a queue has a FIFO priority.
+2. Some of the similarities between a stack and a queue are that they both process one data at a time in a linear fashion and
+3. I'd use LIFO for UNDO and REDO function since the last change that was made has to be retrieved.
+
+Programming Questions
+1. Reverse a string using a stack
+function reverseString(word) {
+  let stack = [];
+  for (let i = 0; i < word.length; i++) {
+    stack.push(word[i]);
+  }
+  let reversedWord = '';
+  for (let i = stack.length - 1; i >= 0; i--) {
+    reversedWord+= stack[i];
+  }
+  return reversedWord;
+}
+
+2. Implement the pop method using FIFO
+function popFIFO(list) {
+}
+
+3. Implement enqueue and dequeue in your own Queue class
+class Queue {
+  constructor(list, element) {
+    this.list = list;
+    this.element = element;
+  }
+  enqueue() {
+    this.list[this.list.length] = this.element;
+  }
+  dequeue() {
+    let list = this.list;
+    let temp = list[0];
+    for (let i = 1; i < list.length; i++) {
+      list[i - 1] = list[i];
+    }
+    list.pop();
+    return temp;
+  }
+}
