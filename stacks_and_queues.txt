@@ -18,25 +18,23 @@ function reverseString(word) {
 }
 
 2. Implement the pop method using FIFO
-function popFIFO(list) {
-}
-
-3. Implement enqueue and dequeue in your own Queue class
 class Queue {
-  constructor(list, element) {
-    this.list = list;
-    this.element = element;
+  constructor() {
+    this.queue = [];
   }
-  enqueue() {
-    this.list[this.list.length] = this.element;
+  enqueue(element) {
+    this.queue.push(element);
   }
-  dequeue() {
-    let list = this.list;
-    let temp = list[0];
-    for (let i = 1; i < list.length; i++) {
-      list[i - 1] = list[i];
+  dequeue(this.queue) {
+    let temp = this.queue[0];
+    for (let i = 1; i < this.queue.length; i++) {
+      this.queue[i - 1] = this.queue[i];
     }
-    list.pop();
+    this.queue.pop();
     return temp;
+  }
+  pop(element) {
+    this.enqueue(element);
+    this.dequeue();
   }
 }
