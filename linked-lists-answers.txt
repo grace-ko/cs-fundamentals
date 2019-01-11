@@ -28,25 +28,31 @@ END FUNCTION
       return false;
     }
     let count = {}
-    let current = this.head;
+    let currentNode = this.head;
+    let nextNode = currentNode.next;
 
-    while(current !== null) {
-      if (count[current.val]) {
-        let currentNext = current.next;
-        prev.next = currentNext;
-        current.next = null;
+    while(nextNode) {
+      if (count[nextNode.val]) {
+        currentNode.next = nextNode.next
       } else {
-        count[current.val] = 1;
+        currentNode = nextNode;
       }
-      let prev = current;
-      current = current.next;
+      nextNode = nextNode.next;
     }
   }
 
-
-
-
-
-
-
 3. Reverse an unsorted singly linked list
+  LinkedList.prototype.reverseList = function() {
+    if(!this.head) {
+      return false;
+    } else if(!this.head.next) {
+      return this.head.val;
+    }
+    
+
+
+
+
+
+
+  }
