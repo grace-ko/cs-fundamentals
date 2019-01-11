@@ -48,11 +48,14 @@ END FUNCTION
     } else if(!this.head.next) {
       return this.head.val;
     }
-    
-
-
-
-
-
-
+    let currentNode = this.head;
+    var nextNode = null;
+    var prevNode = null;
+    while(currentNode) {
+      nextNode = currentNode.next;
+      currentNode.next = previousNode;
+      previousNode = currentNode;
+      currentNode = nextNode;
+    }
+    this.head = previousNode;
   }
