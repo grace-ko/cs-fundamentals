@@ -23,7 +23,24 @@ FUNCTION push(element)
 END FUNCTION
 
 2. Remove duplicates from an unsorted singly linked list
-  LinkedList.prototype.removeDuplicates = function () {
+  function LinkedList() {
+    this.head = null;
+    this.tail = null;
+  }
+
+  function Node(value, next) {
+    this.value = value;
+    this.next = next;
+  }
+
+  LinkedList.prototype.addToTail = function(value) {
+    var newNode = new Node(value, null);
+    if (this.tail) this.tail.next = newNode;
+    else this.head = newNode;
+    this.tail = newNode;
+  }
+
+  LinkedList.prototype.removeDuplicates = function() {
     if(!this.head || !this.head.next) {
       return false;
     }
@@ -32,14 +49,25 @@ END FUNCTION
     let nextNode = currentNode.next;
 
     while(nextNode) {
-      if (count[nextNode.val]) {
+      if (count[nextNode.value]) {
         currentNode.next = nextNode.next
       } else {
+        count[nextNode.value] = true;
         currentNode = nextNode;
       }
       nextNode = nextNode.next;
     }
+    return this;
   }
+
+  var newList = new LinkedList();
+  newList.addToTail(1);
+  newList.addToTail(2);
+  newList.addToTail(2);
+  newList.addToTail(3);
+  newList.addToTail(3);
+  newList.removeDuplicates();
+  console.log(newList);
 
 3. Reverse an unsorted singly linked list
   LinkedList.prototype.reverseList = function() {
