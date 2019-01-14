@@ -70,20 +70,46 @@ END FUNCTION
   console.log(newList);
 
 3. Reverse an unsorted singly linked list
+  function LinkedList() {
+    this.head = null;
+    this.tail = null;
+  }
+
+  function Node(value, next) {
+    this.value = value;
+    this.next = next;
+  }
+
+  LinkedList.prototype.addToTail = function(value) {
+    var newNode = new Node(value, null);
+    if (this.tail) this.tail.next = newNode;
+    else this.head = newNode;
+    this.tail = newNode;
+  }
+
   LinkedList.prototype.reverseList = function() {
     if(!this.head) {
       return false;
     } else if(!this.head.next) {
-      return this.head.val;
+      return this.head.value;
     }
-    let currentNode = this.head;
-    var nextNode = null;
-    var prevNode = null;
-    while(currentNode) {
-      nextNode = currentNode.next;
-      currentNode.next = previousNode;
-      previousNode = currentNode;
-      currentNode = nextNode;
+    let current = this.head;
+    let next = null;
+    let previous = null;
+    let finalTail = this.tail;
+    while(current) {
+      next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
     }
-    this.head = previousNode;
+    this.head = previous;
   }
+
+  var newList = new LinkedList();
+  newList.addToTail(1);
+  newList.addToTail(2);
+  newList.addToTail(3);
+  newList.addToTail(4);
+  newList.reverseList();
+  console.log(newList);
