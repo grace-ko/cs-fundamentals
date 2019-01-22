@@ -1,0 +1,50 @@
+1. What is time complexity and what is its relation to algorithms?
+Time complexity refers to the time it takes to complete a program and it calculates how fast the time grows relative to the amount of input, hence the asymptotic behavior of the run time as the run time approaches infinity for a given algorithm. It's a general and more abstract way of describing performance as seen in big O notation vs runtime that's a specific time measurement.
+
+2. What is runtime?
+Runtime is the physical time duration of an algorithm and is often times used interchangeably with time complexity.
+
+3. How is the runtime of an algorithm calculated?
+The runtime is calculated by taking each line of execution and applying asymptotic notation that discards the constant factors.
+
+4. Name the six types of algorithm growth rates we saw in this checkpoint and list them in order of most efficient to least efficient. Now Google another algorithmic growth rate not covered and place it in the correct spot in your list.
+constant, logarithmic, linear, log-linear, quadratic, exponential, factorial
+
+5. Choose one of the algorithmic growth rates from the last question and make a comparison to a real-life situation.
+A logarithmic growth rate example would be guessing a number between 0 - 100 in a hot or cold quiz
+
+6. Determine the time complexity of the following snippet of code. It is commonly known as a linear search - A: Linear
+
+FUNCTION linearSearch(array, target)
+ FOR each number in the array
+   IF number = target THEN
+     RETURN true
+   END IF
+ END FOR
+ RETURN false
+END FUNCTION
+
+Determine the time complexity of the following snippet of code - A: Quadratic
+If you get stuck, read through the graphical representation section again.
+FUNCTION foo(array)
+ FOR each number in the array
+   FOR each number in the array
+     print "Hello"
+   END FOR
+ END FOR
+END FUNCTION
+
+Determine the time complexity of the following snippet of code. It is commonly known as the Fibonacci sequence - A: Exponential
+FUNCTION fibonacci(number)
+ IF number < 1 THEN
+   ERROR
+ ELSE IF number = 1 or 2 THEN
+   RETURN 1
+ ELSE
+   CALL fibonacci WITH number - 2 RETURNING twoBack
+   CALL fibonacci WITH number - 1 RETURNING oneBack
+   RETURN twoBack + oneBack
+ END IF
+END FUNCTION
+Out of the code snippets you just saw, which is the most time efficient?
+The linear complexity is the most time efficient of the given examples
