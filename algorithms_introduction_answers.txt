@@ -1,0 +1,44 @@
+1. Using proper pseudo-code, describe the following primitive algorithms:
+
+Making coffee:
+FILL the carafe with water
+PLACE the carafe on the heating plate
+MEASURE out coffee grounds
+PLACE the coffee grounds in a filter
+PLACE the filter in the filter basket
+CLOSE the lid
+START the coffee maker
+
+Washing dishes:
+SCRAPE dishes to remove leftover food
+  IF food is stuck THEN
+    SOAK in hot water
+FILL dishpan with clean, hot water
+ADD dish soap to the water
+SCRUB dishes in the water starting with lightly soiled items like cups
+  IF water becomes greasy
+    CHANGE to clean water with new dish soap
+RINSE with clean hot water
+PLACE on drying rack
+AIR DRY or WIPE with a clean towel
+
+Flossing teeth:
+CUT a piece of floss
+WRAP one end of the floss around the index finger of one hand and the other end around index finger of the other hand
+PLACE the floss between the teeth toward the gum line
+CURVE the floss in a U-shape around each tooth
+SLIDE the floss beneath the gum line
+MOVE the floss up and down to remove debris
+
+2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
+
+Tesla: As a pioneer in the electric vehicle market among other products, Tesla is building new AI that is believed to process the "thinking" algorithms for their autopilot software for autonomous driving capability. Tesla has been collecting data with a lot more sensors on the roads than its competitors. All Tesla models send data directly to the cloud and problems such as overheating is diagnosed by monitoring data and fixed automatically by software. I think it's awesome that Tesla is trying to automate driving and taking our experiences to a whole another level.
+
+Uber: I remember the days when I had to call the yellow cab by calling a number to have a dispatcher schedule a ride for me. Only several years later, Uber came about and with the tap of a button, an Uber driver is assigned and I know exactly who to expect and when. Uber has a dispatch algorithm that they use such as the modeling on the driver side based on various states like stationary, random drive, demand gravity, etc. Uber has disrupted the market and I absolutely love it as a consumer. It has made my life so much easier and I have never experienced any inconveniences due to errors in the app.
+
+Amazon: Amazon recommendation system uses a mixture of AI based algorithms and I believe their system is the best in the market. I have used the system to purchase a lot of stuff and it's always relevant and they're some awesome recommendations. They use "item to item collaborative filtering, which scales to massive data sets and produces high-quality recommendations in real time."
+
+3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+An efficient algorithm
+
+Efficient algorithms would not depend on one factor alone but would have trade offs between several factors. Perhaps the most important would be how fast it is as well as how much memory space it takes up. Also, it's important for it to do what it's supposed to do and execute appropriately. An efficient algorithm would also avoid  unnecessary calculations. Efficient algorithm might take longer, take up more space, and perform unnecessary calculations.
