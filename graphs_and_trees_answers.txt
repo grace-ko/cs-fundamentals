@@ -1,3 +1,4 @@
+Exercises
 Q1. What is a binary tree and what makes it unique to other trees?
 A: Binary tree is a data structure that has a tree like structure with the root node on top and grows downward. It's unique in that each node has maximum of up to two child nodes.
 
@@ -14,4 +15,38 @@ Q5. Explain in your own words what an undirected, a-cyclic, unweighted graph is.
 A: An undirected graph would consist of nodes whose edges are bidirectional; it's not required to go in one direction. Acyclic graph does not have a loop with a leaf from which no pointer leaves. An unweighted graph does have edges that are labeled with values that may be used for measurement or prioritization.
 
 Q6. What kind of graph is a binary search tree?
-A: a BST is a type of a binary tree with each node having maximum of two child nodes. What's special about BST is that the left child node is smaller than the parent node but the right child node is bigger than the parent node and the nodes are sorted. 
+A: a BST is a type of a binary tree with each node having maximum of two child nodes. What's special about BST is that the left child node is smaller than the parent node but the right child node is bigger than the parent node and the nodes are sorted.
+
+Programming Questions
+Q1. Given a Binary Search Tree and a value, write a function that checks to see whether the value exists within the tree.
+
+function BST(value) {
+  this.value = value;
+  this.right = null;
+  this.left = null;
+}
+
+BST.prototype.insert = function(value) {
+  if (value <= this.value) {
+    if(!this.left) this.left = new BST(value);
+    else this.left.insert(value);
+  }
+  else if (value > this.value) {
+    if (!this.right) this.right = new BST(value);
+    else this.right.insert(value);
+  }
+}
+
+BST.prototype.contains = function(value) {
+  if (this.value === value) return true;
+  if (value < this.value) {
+    if (!this.left) return false;
+    else return this.left.contains(value);
+  }
+  else if (value > this.value) {
+    if (!this.right) return false;
+    else return this.right.contains(value);
+  }
+};
+
+Q2. Given a Binary Search Tree and two nodes, n1 and n2, write a function that finds the distance between the two nodes.

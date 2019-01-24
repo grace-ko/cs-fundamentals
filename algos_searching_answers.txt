@@ -1,0 +1,23 @@
+Short Answer
+Q1. What is a real-life scenario that uses linear search?
+A: A real-life scenario using a linear search would be going through all the milk cartons at a grocery store to look for expired ones.
+
+Q2. What is a real-life scenario that uses binary search?
+A: An example of binary search is looking for an item in a laundry basket; if it's a dark color, the items can be halved into dark vs white. If the item is small, all the big items can be separated out, etc.
+
+Q3. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+A: It would take 7 iterations to reach G via linear search.
+
+Q4. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+A: It would take 2-3 iterations using binary search (depending on where it's halved).
+
+Q5. Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+A: I would choose linear search since binary search would require sorting that will add time.
+
+Q6. Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+A: I would choose binary search as it will give O(log n) vs O(n).
+
+Programming Assignment
+Q1. You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+Q2. You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
