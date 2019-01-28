@@ -1,0 +1,58 @@
+function Newspaper(size) {
+  this.buckets = Array(size);
+  this.numBuckets = this.buckets.length;
+}
+function digitalCopy(key, value, next) {
+  this.key = key;
+  this.value = value;
+  this.next = next || null;
+}
+Newspaper.prototype.hash = function(publisher, date) {
+  var total = 0;
+  var key = publisher + date;
+  for (var i = 0; i < key.length; i++) {
+    total+= key.charCodeAt(i);
+  }
+  return total % this.numBuckets;
+}
+Newspaper.prototype.insert = function(key, value) {
+  var index = this.hash(key + value.date);
+  if (!this.buckets[index]) {
+    this.buckets[index] = new digitalCopy(key, value);
+  } else if (this.buckets[index].key === key) {
+    this.buckets[index].value = value;
+  } else {
+    var currentNode = this.buckets[index];
+    while(currentNode.next) {
+      if (currentNode.key === key) {
+        currentNode.value = value;
+      }
+      currentNode = currentNode.next;
+    }
+    currentNode.next = new digitalCopy(key, value);
+  }
+  return this.buckets[index];
+}
+Newspaper.prototype.find = function(publisher, date) {
+  console.log(publisher, date)
+  var index = this.hash(publisher + date);
+  if (!this.buckets[index]) {
+    return 'inex not found';
+  } else if (this.buckets[index].key === publisher) {
+    return this.buckets[index];
+  } else {
+    var currentNode = this.buckets[index];
+    while(currentNode.next) {
+      if (currentNode.key === publisher) {
+        return currentNode;
+      } else {
+        currentNode = currentNode.next;
+      }
+    }
+  }
+  return 'Newspaper not found';
+}
+//publisher input as key and article and date as value object
+var newspaper = new Newspaper(10);
+newspaper.insert('Bay Area News', {article: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', date: 9/10/2017});
+newspaper.find('Bay Area News', 9/10/2017)
