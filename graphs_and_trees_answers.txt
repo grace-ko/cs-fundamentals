@@ -12,7 +12,7 @@ Q4. What is the difference between a depth-first search and a breadth-first sear
 A: The difference between a DFS and BFS is the order in which it searches. DFS traverses an entire branch down to the leaf node before moving back up to the next branch whereas BFS search level by level, neighboring nodes before child nodes.
 
 Q5. Explain in your own words what an undirected, a-cyclic, unweighted graph is.
-A: An undirected graph would consist of nodes whose edges are bidirectional; it's not required to go in one direction. Acyclic graph does not have a loop with a leaf from which no pointer leaves. An unweighted graph does have edges that are labeled with values that may be used for measurement or prioritization.
+A: An undirected graph would consist of nodes whose edges are bidirectional; it's not required to go in one direction. Acyclic graph does not have a loop with a leaf from which no pointer leaves. An unweighted graph has edges that are labeled with values that may be used for measurement or prioritization.
 
 Q6. What kind of graph is a binary search tree?
 A: a BST is a type of a binary tree with each node having maximum of two child nodes. What's special about BST is that the left child node is smaller than the parent node but the right child node is bigger than the parent node and the nodes are sorted.
@@ -25,7 +25,6 @@ function BST(value) {
   this.right = null;
   this.left = null;
 }
-
 BST.prototype.insert = function(value) {
   if (value <= this.value) {
     if(!this.left) this.left = new BST(value);
@@ -36,7 +35,6 @@ BST.prototype.insert = function(value) {
     else this.right.insert(value);
   }
 }
-
 BST.prototype.contains = function(value) {
   if (this.value === value) return true;
   if (value < this.value) {

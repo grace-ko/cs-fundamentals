@@ -1,34 +1,38 @@
 1. Using proper pseudo-code, describe the following primitive algorithms:
 
 Making coffee:
-FILL the carafe with water
-PLACE the carafe on the heating plate
-MEASURE out coffee grounds
-PLACE the coffee grounds in a filter
-PLACE the filter in the filter basket
-CLOSE the lid
-START the coffee maker
+FILL carafe WITH water
+PLACE carafe ON heatingPlate
+MEASURE coffeeGrounds
+PLACE coffeeGrounds IN filter
+PLACE filter IN filterBasket
+CLOSE lid
+START coffeeMaker
 
 Washing dishes:
-SCRAPE dishes to remove leftover food
-  IF food is stuck THEN
-    SOAK in hot water
-FILL dishpan with clean, hot water
-ADD dish soap to the water
-SCRUB dishes in the water starting with lightly soiled items like cups
-  IF water becomes greasy
-    CHANGE to clean water with new dish soap
-RINSE with clean hot water
-PLACE on drying rack
-AIR DRY or WIPE with a clean towel
+SCRAPE dishes
+  IF food === stuck THEN
+    SOAK IN hotWater
+FILL dishPan WITH hotWater
+ADD dishSoap
+WHILE dish === dirty
+    SCRUB dishes
+ENDWHILE
+IF water === greasy
+  CHANGE water
+RINSE WITH hotWater
+PLACE ON dryingRack
+AIR DRY || WIPE WITH towel
 
 Flossing teeth:
-CUT a piece of floss
-WRAP one end of the floss around the index finger of one hand and the other end around index finger of the other hand
-PLACE the floss between the teeth toward the gum line
-CURVE the floss in a U-shape around each tooth
-SLIDE the floss beneath the gum line
-MOVE the floss up and down to remove debris
+CUT floss
+WRAP floss ON finger
+PLACE floss BETWEEN teeth
+CURVE floss AROUND teeth
+SLIDE floss BETWEEN gumLine
+WHILE debris
+  MOVE floss up && down
+ENDWHILE
 
 2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
 
@@ -39,6 +43,4 @@ Uber: I remember the days when I had to call the yellow cab by calling a number 
 Amazon: Amazon recommendation system uses a mixture of AI based algorithms and I believe their system is the best in the market. I have used the system to purchase a lot of stuff and it's always relevant and they're some awesome recommendations. They use "item to item collaborative filtering, which scales to massive data sets and produces high-quality recommendations in real time."
 
 3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
-An efficient algorithm
-
-Efficient algorithms would not depend on one factor alone but would have trade offs between several factors. Perhaps the most important would be how fast it is as well as how much memory space it takes up. Also, it's important for it to do what it's supposed to do and execute appropriately. An efficient algorithm would also avoid  unnecessary calculations. Efficient algorithm might take longer, take up more space, and perform unnecessary calculations.
+Efficient algorithms would not depend on one factor alone but have trade offs between several factors. Perhaps the most important would be how fast it is as well as how much memory space it takes up. Also, it's important for it to do what it's supposed to do and execute appropriately. An efficient algorithm would also avoid  unnecessary calculations. An inefficient algorithm might take longer, take up more space, and perform unnecessary calculations.
