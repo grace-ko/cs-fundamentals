@@ -8,10 +8,21 @@ Factorial, greatest common divisor, Fibonacci numbers, reverse a string, towers 
 Recursion should be used when it gets complex to use an iterative solution and avoided when an iterative implementation is pretty straightforward.
 
 4. Compare the recursive and iterative solutions to the three algorithms from the checkpoint (factorial, maximum, and fibonacci). What is similar, and what is different?
-
+The solutions are similar in that at each iteration/call, they all repeat steps with a base case at which it ends and the input size is reduced. They also have a way of keeping track of the result from previous calls such as in return statement or variables. In the maximum function recursion, comparison is done after the recursive case and also has an iterative function that's simpler and cleaner than the recursive function compared to the others. In Fibonacci and maximum functions, two variables are kept track of whereas the factorial function is much simpler.
 
 5. Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
+function numOfItems() {
+
+}
+
+
 
 6. A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). Write a recursive algorithm to determine if a given word or phrase is a palindrome.
-
+function isPalindrome(word) {
+  word = word.split('');
+  if (word.length === 0 || word.length === 1) return true;
+  if (word[0] !== word[word.length-1]) return false;
+  return isPalindrome(word.pop(), word.shift());
+}
 7. Google Easter Egg: Google the term "recursion". Google will prompt you with "Did you mean: recursion". Explain why this behavior exhibits properties of recursion.
+This behavior exhibits properties of recursion because it's referencing itself.
