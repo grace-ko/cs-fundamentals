@@ -11,6 +11,7 @@ Recursion should be used when it gets complex to use an iterative solution and a
 The solutions are similar in that at each iteration/call, they all repeat steps with a base case at which it ends and the input size is reduced. They also have a way of keeping track of the result from previous calls such as in return statement or variables. In the maximum function recursion, comparison is done after the recursive case and also has an iterative function that's simpler and cleaner than the recursive function compared to the others. In Fibonacci and maximum functions, two variables are kept track of whereas the factorial function is much simpler.
 
 5. Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
+var count = 0;
 function countItems(arr){
   if(!Array.isArray(arr)){
      count++;
