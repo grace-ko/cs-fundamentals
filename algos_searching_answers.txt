@@ -19,7 +19,7 @@ A: I would choose binary search as it will give O(log n) vs O(n).
 
 Programming Assignment
 Q1. You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
-
+var arr = ["Albatross", "Owl", "Parrot", "Sparrow", "Woodpecker"];
 function searchWord(arr, word){
   var low = arr[0];
   var high = arr[arr.length -1];
@@ -41,12 +41,18 @@ function searchWord(arr, word){
   return "Not found;
 }
 
+console.log(searchWord(arr, "Albatross"));
+
 Q2. You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
+
+var arr = ["catfish", "albacore", "goldfish", "eel"];
 function netFish(fishList, goldFish) {
   for (var i = 0; i < fishList.length; i++) {
     if (fishList[i] === goldFish) {
       return "Found the fish you're looking for!";
     }
-    return "No white-spotted goldfish are found in this tank";
   }
+  return "No white-spotted goldfish are found in this tank";
 }
+
+console.log(netFish(arr, "goldfish"));
